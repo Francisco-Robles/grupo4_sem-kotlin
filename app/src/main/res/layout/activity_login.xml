@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
         android:padding="5dp"
-        android:text="Recordar Usuario"
+        android:text="Aceptar términos y condiciones"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
