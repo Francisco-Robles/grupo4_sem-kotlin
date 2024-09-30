@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">grupo4_sem-kotlin</string>
+    <string name="titulo">Peliculas</string>
+    <string name="nombre_usuario">NOMBRE</string>
+    <string name="password_usuario">PASSWORD</string>
+    <string name="sp_credenciales">SP_CREDENCIALES</string>
+    <string name="item_listado">Peliculas favoritas</string>
+    <string name="volver">volver</string>
 </resources>

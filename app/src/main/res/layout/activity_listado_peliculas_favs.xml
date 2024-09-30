@@ -4,23 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:weightSum="1"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent"
+    tools:context=".ListadoPeliculasFavsActivity"
+    android:orientation="vertical">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/primary_toolbar"
         />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPeliculas"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_pelicula"
-
-        />
+        android:text="Todavía no has seleccionado ninguna pelicula como favorita!" />
 
 </LinearLayout>

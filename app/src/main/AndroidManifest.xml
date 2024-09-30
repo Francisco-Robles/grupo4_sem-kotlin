@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Grupo4_semkotlin"
         tools:targetApi="31">
         <activity
+            android:name=".ListadoPeliculasFavsActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
