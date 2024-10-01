@@ -62,17 +62,18 @@ class LoginActivity : AppCompatActivity() {
         val passText = contraseña.text.toString()
 
         if (usuarioText.isNotEmpty() && passText.isNotEmpty()) {
-            if (recordarUsuario.isChecked){
-                val preferencias = getSharedPreferences(resources.getString(R.string.sp_credenciales), MODE_PRIVATE)
-                preferencias.edit().putString(resources.getString(R.string.nombre_usuario), usuarioText).apply()
-                preferencias.edit().putString(resources.getString(R.string.password_usuario), passText).apply()
-            } else {
-                val preferencias = getSharedPreferences(resources.getString(R.string.sp_credenciales), MODE_PRIVATE)
-                preferencias.edit().remove(resources.getString(R.string.nombre_usuario)).apply()
-                preferencias.edit().remove(resources.getString(R.string.password_usuario)).apply()
-            }
 
-            startMainActivity(usuarioText)
+            val usuarioBuscado = AppDatabase.getDatabase(this).usuarioDao().getUsuario(usuarioText, passText)
+
+            if (usuarioBuscado != null){
+                if (recordarUsuario.isChecked){
+                    val preferencias = getSharedPreferences(resources.getString(R.string.sp_credenciales), MODE_PRIVATE)
+                    preferencias.edit().putString(resources.getString(R.string.nombre_usuario), usuarioText).apply()
+                    preferencias.edit().putString(resources.getString(R.string.password_usuario), passText).apply()
+                }
+
+                startMainActivity(usuarioText)
+            }
 
         } else {
             Toast.makeText(
@@ -84,7 +85,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun crearUsuario() {
-        val usuarioText = usuario.text.toString()
+
+        val intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
+        /*val usuarioText = usuario.text.toString()
         val passText = contraseña.text.toString()
 
         if (usuarioText.isNotEmpty() && passText.isNotEmpty()) {
@@ -103,7 +107,7 @@ class LoginActivity : AppCompatActivity() {
                 "Por favor, complete ambos campos para crear un usuario.",
                 Toast.LENGTH_SHORT
             ).show()
-        }
+        }*/
     }
 
     private fun startMainActivity (usuario: String){

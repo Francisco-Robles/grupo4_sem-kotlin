@@ -52,11 +52,12 @@ class MainActivity : AppCompatActivity() {
     private fun getPeliculas(): MutableList<Pelicula>{
 
         val peliculas: MutableList<Pelicula> = ArrayList()
-
-        peliculas.add(Pelicula(1,"Pelicula 1", 2020, "Genero 1", false))
-        peliculas.add(Pelicula(2,"Pelicula 2", 2021, "Genero 2", false))
-        peliculas.add(Pelicula(3,"Pelicula 3", 2022, "Genero 1", true))
-        peliculas.add(Pelicula(4,"Pelicula 4", 2023, "Genero 2", false))
+        /*var bdd = AppDatabase.getDatabase(applicationContext)
+        peliculas.addAll(bdd.peliculaDao().getAll())*/
+        peliculas.add(Pelicula("Pelicula 1", 2020, "Genero 1", false))
+        peliculas.add(Pelicula("Pelicula 2", 2021, "Genero 2", false))
+        peliculas.add(Pelicula("Pelicula 3", 2022, "Genero 1", true))
+        peliculas.add(Pelicula("Pelicula 4", 2023, "Genero 2", false))
 
         return peliculas
 
