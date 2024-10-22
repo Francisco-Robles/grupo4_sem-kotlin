@@ -7,9 +7,6 @@ import androidx.room.Query
 @Dao
 interface UsuarioDao {
 
-    @Query("SELECT * FROM usuarios_entity")
-    fun getAll(): List<Usuario>
-
     @Insert
     fun insertUsuario(usuario: Usuario)
 
